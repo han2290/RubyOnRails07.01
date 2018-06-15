@@ -1,0 +1,7 @@
+<h1>수정</h1>
+
+<form action="/tweet/<%=@board.id%>/update" method="POST">
+    <textarea name="content"><%=@board.content%></textarea>
+    <input type="submit" value="확인">   
+    <input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
+</form>

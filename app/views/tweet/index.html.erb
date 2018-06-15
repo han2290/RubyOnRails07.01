@@ -1,0 +1,30 @@
+
+<!--<a href="/tweet/new">입력</a>-->
+<div class="list-group">
+    
+  <%@boards.each do |board|%>
+  <a href="/tweet/<%=board.id%>/show" class="rounded list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><%=board.content[0..10]%>...</h5>
+      <small><%=board.created_at%></small>
+    </div>
+    <p class="mb-1"><%=board.content%></p>
+    <small><%=board.ip%></small>
+  </a>
+  <% end %>
+  
+</div>
+
+<!--<ul class="list-group">-->
+    
+<!--    <li>-->
+        
+        
+        
+<!--        <a href="/tweet/<%#=board.id%>/edit">-->
+<!--            수정-->
+<!--        </a>-->
+        
+<!--    </li>-->
+    
+<!--</ul>-->

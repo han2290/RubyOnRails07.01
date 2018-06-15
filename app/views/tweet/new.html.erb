@@ -1,0 +1,9 @@
+<h1>New</h1>
+
+<form action="/tweet/create" method="POST">
+    <textarea name="content"  placeholder="tweet을 입력하세요">
+    </textarea>
+    <input type="submit" value="확인">   
+    <input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
+</form>
+
