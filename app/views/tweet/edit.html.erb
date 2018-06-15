@@ -1,7 +1,9 @@
-<h1>수정</h1>
-
-<form action="/tweet/<%=@board.id%>/update" method="POST">
-    <textarea name="content"><%=@board.content%></textarea>
-    <input type="submit" value="확인">   
+<form class="rounded form-group" action="/tweet/<%=@board.id%>/update" method="POST">
+    <textarea class=" form-control bg-white text-dark" rows="4" name="content"><%=@board.content%></textarea>
+    <div class="d-flex w-100 justify-content-between">
+        <small class="mb-1" ></small>
+        <input class="btn btn-link" type="submit" value="확인"> 
+    </div>
+      
     <input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
 </form>
