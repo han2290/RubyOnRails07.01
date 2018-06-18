@@ -5,31 +5,21 @@
     <title>TwitterApp</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/4.1/examples/blog/blog.css" rel="stylesheet">
-    <style type="text/css">
-      html, body{
-      margin:0;
-      padding:0;
-      height:90%;
-    }
-    </style>
- 
+    <link href="blog.css" rel="stylesheet">
   </head>
 
-  <body class="container bg-white">
- 
+  <body class="bg-gradient-dark" style="$enable-gradients: true;">
     <header class="blog-header py-3">
         <div class="row flex-nowrap  justify-content-between align-items-center">
           <div class="col-4 pt-1">
           </div>
           <div class="col-4 text-center">
-            
-            <h1 class="font-weight-light text-dark">Twitter</h1>
-            
+            <h1 class="font-weight-light text-dark">
+              Twitter
+            </h1>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <a class="text-muted" >
@@ -48,21 +38,9 @@
         </nav>
       </div>
       
-      <div class="inner p-3 p-md-5 text-white rounded bg-secondary" style = "height:100%; overflow-y: auto;">
-        <% flash.each do |k, v|%>
-          <script>
-            toastr.<%= k %>("<%= v %>");
-          </script>
-        <%end%>
+      <div class="container p-3 p-md-5 text-white rounded bg-light">
         <%= yield %>
       </div>
-      
-      <footer class="blog-footer">
-      <p>2018년 06월 16년, Rails TestApp by <a href="https://github.com/han2290/Ruby_Day07">@han2290</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
       
       
   </body>

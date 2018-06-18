@@ -1,0 +1,26 @@
+
+<!--<a href="/tweet/new">입력</a>-->
+<div class="list-group">
+    <!--blog-header list-group-item list-group-item-action -->
+  <%@boards.reverse.each do |board|%>
+  <a href="/tweet/<%=board.id%>/show" class="rounded alert alert-light flex-column align-items-start text-dark">
+    <div class="d-flex w-100 justify-content-between ">
+      <h5 class="mb-2 "></h5>
+      <small><%=board.created_at%></small>
+    </div>
+ 
+    <!--d-flex w-100 -->
+    <div class="justify-content-between">
+      <!--<p class="mb-1"></p>-->
+      <h6 class="font-weight-bold text-monospace alert-heading"><%=truncate(board.content, length: 10)%>
+      <%if Time.now - board.created_at < 1800%>
+        <span class="badge badge-danger">New</span>
+      <%end%>
+      </h6>
+      <small><%=board.ip%></small>
+    </div>
+    <hr>
+  </a>
+  <% end %>
+  
+</div>

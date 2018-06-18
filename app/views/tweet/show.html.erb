@@ -1,14 +1,21 @@
-<div class= "rounded list-group-item flex-column bg-white text-dark">
+<!--list-group-item alert alert-ligh-->
+<div class= "rounded alert alert-ligh text-monospace font-weight-bold flex-column bg-white text-dark">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1"></h5>
-      <small><%=@board.created_at%></small>
+      <small><%=@board.created_at.localtime("+09:00")%></small>
     </div>
-    <p><%=@board.content%></p>
-    <small class="mb-1" ><%=@board.ip%></small>
+    <br>
+    <p class="text-monospace text-justify alert-heading" style="word-wrap: break-word;"><%=@board.content%></p>
+    <br>
+    <hr>
+    <!--justify-content-end -->
+    <div class="d-flex w-100 ">
+        <small class="mb-0 mr-auto p-2" ><%=@board.ip%></small>
+        <!--btn btn-link --->
+        <a class="p-2 text-dark text-monospace font-weight-bold" href="/tweet/<%=@board.id%>/edit">수정</a>
+        <a class="p-2 text-dark text-monospace font-weight-bold" href="/tweet/<%=@board.id%>/delete">삭제</a>
+    </div>
+    <small class="mb-1" ></small>
     
 </div>
 
-<div class="d-flex w-100 justify-content-between">
-        <small class="mb-1" ></small>
-        <a class="btn btn-link" href="/tweet/<%=@board.id%>/edit">수정</a>
-</div>

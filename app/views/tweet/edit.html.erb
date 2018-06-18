@@ -1,9 +1,7 @@
-<form class="rounded form-group" action="/tweet/<%=@board.id%>/update" method="POST">
-    <textarea class=" form-control bg-white text-dark" rows="4" name="content"><%=@board.content%></textarea>
+<%=form_tag("/tweet/#{@board.id}/update", method: "POST", class: "rounded form-group") do%>
+    <%= text_area_tag :content, @board.content, class: "alert form-control bg-white text-dark", size: "x4"%>
     <div class="d-flex w-100 justify-content-between">
         <small class="mb-1" ></small>
-        <input class="btn btn-link" type="submit" value="확인"> 
+        <%= submit_tag("확인", class: "btn btn-link text-white text-monospace font-weight-bold")%>
     </div>
-      
-    <input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
-</form>
+<%end %>
